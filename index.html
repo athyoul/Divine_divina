@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Birthday</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif;
+      background-color: black;
+    }
+
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      padding: 20px;
+      z-index: 1;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    }
+
+    .content p {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .timer {
+      font-size: 1rem;
+      margin-bottom: 30px;
+    }
+
+    .bubu {
+      margin: 0 auto;
+      border: 3px solid white;
+      border-radius: 15px;
+      padding: 10px;
+      width: 140px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .bubu:hover {
+      transform: scale(1.05);
+    }
+
+    .bubu img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      display: block;
+    }
+
+    .tap {
+      margin-top: 12px;
+      font-size: 1rem;
+      color: #eee;
+      font-weight: 400;
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Background Video -->
+  <video class="video-background" autoplay muted loop playsinline>
+    <source src="#" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Background Audio -->
+  <audio id="bgMusic" src="blue.mp3.mp3" preload="auto"></audio>
+
+  <!-- Main Content -->
+  <div class="content">
+    <p>THE WORLD JUST GOT LUCKIER SINCE</p>
+    <div class="timer" id="timer"></div>
+
+    <div class="bubu" id="playAudio">
+      
+    <a href="page2.html" class="butterfly" target="_blank"><img src="https://i.pinimg.com/originals/b6/34/9e/b6349ea48b5cd7e7d1b2f22d04c3da0b.jpg" alt="Framed Image"></a>
+    </div>
+    <div class="tap">Tap me</div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Timer function
+    function updateTimer() {
+      const startDate = new Date("2005-05-15T00:00:00");
+      const now = new Date();
+      let diff = now - startDate;
+
+      const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
+      diff -= years * (1000 * 60 * 60 * 24 * 365.25);
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      diff -= days * (1000 * 60 * 60 * 24);
+
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      diff -= hours * (1000 * 60 * 60);
+
+      const minutes = Math.floor(diff / (1000 * 60));
+      diff -= minutes * (1000 * 60);
+
+      const seconds = Math.floor(diff / 1000);
+
+      document.getElementById("timer").innerText =
+        `${years} years, ${days} days, ${hours} hrs, ${minutes} mins, ${seconds} secs`;
+    }
+
+  
+    setInterval(updateTimer, 1000);
+    updateTimer();
+
+  
+    document.getElementById("playAudio").addEventListener("click", function () {
+      const audio = document.getElementById("bgMusic");
+      audio.play();
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Love Letter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(#fff0f5, #ffe4e1);
+      font-family: "Dancing Script", cursive;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .pocket {
+      margin: 100px auto 0;
+      width: 0;
+      height: 0;
+      border-left: 140px solid #f78da7;
+      border-right: 140px solid #f78da7;
+      border-top: 90px solid transparent;
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .letter {
+      width: 320px;
+      background-color: #fff;
+      margin: -30px auto 0;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      position: relative;
+      z-index: 2;
+      animation: slideUp 2s ease-out;
+    }
+
+    .letter h2 {
+      margin: 0 0 15px;
+      font-size: 2em;
+      color: #e91e63;
+    }
+
+    .letter p {
+      margin: 8px 0;
+      font-size: 1.3em;
+      color: #444;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #ff4d6d;
+      transform: rotate(45deg);
+      animation: float 6s infinite ease-in-out;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #ff4d6d;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      top: 0;
+      left: -10px;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Hearts -->
+  <div class="hearts">
+    <!-- Random hearts for background animation -->
+    <div class="heart" style="left: 20%; animation-delay: 0s;"></div>
+    <div class="heart" style="left: 40%; animation-delay: 1s;"></div>
+    <div class="heart" style="left: 60%; animation-delay: 2s;"></div>
+    <div class="heart" style="left: 80%; animation-delay: 3s;"></div>
+    <div class="heart" style="left: 30%; animation-delay: 1.5s;"></div>
+  </div>
+
+  <!-- Envelope Pocket -->
+  <div class="pocket"></div>
+
+  <!-- Love Letter -->
+  <div class="letter">
+    <h2>My Dearest 💖</h2>
+    <p>Hey, funny thing—no matter how busy life gets, you still cross my mind more often than I expect.</p> 
+    <p>There’s just something about the way you carry yourself—it’s effortless, but it sticks.</p> 
+  
+    <p>Happy Birthday :) I hope your day’s as amazing as your smile.</p>
+    <p>Even if things didn’t go the way I once hoped, you still mean a lot to me💌.</p>
+
+  </div>
+
+  <div><p>Click Us!</p><a href="k.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf55Re8NWnCbHjOHUb9lYBxq8bJuDszokLDg&s"></a></div>
+</body>
+</html>

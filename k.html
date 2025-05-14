@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wishes in the Sky</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Great Vibes', cursive;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .lantern {
+      position: absolute;
+      bottom: -100px;
+      width: 60px;
+      height: 80px;
+      background: rgba(255, 204, 102, 0.7);
+      border-radius: 30px 30px 10px 10px;
+      animation: floatUp 10s infinite ease-in-out;
+      box-shadow: 0 0 20px 5px rgba(255, 204, 102, 0.5);
+    }
+
+    .lantern::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 10px;
+      background: #ffcc66;
+      border-radius: 50%;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-110vh) scale(0.8);
+        opacity: 0;
+      }
+    }
+
+    .message {
+      font-size: 2rem;
+      text-align: center;
+      max-width: 90%;
+      margin-top: 20px;
+      z-index: 2;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      background-image: radial-gradient(white 1px, transparent 1px);
+      background-size: 3px 3px;
+      opacity: 0.2;
+      z-index: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+
+  <div class="message">
+    Here’s to you—<br>
+    to the calm you bring, the spark you leave, and the silent way you’ve inspired more than you know.<br><br>
+    Just sending a quiet wish your way ✨
+    I know your heart’s still healing, and I’d never try to replace what you lost. <br>But if ever you're ready to let someone make you feel safe, seen, and quietly cared for—I’ll be right here, no pressure, just real✨.
+  </div>
+
+  <!-- Multiple lanterns -->
+  <div class="lantern" style="left: 20%; animation-delay: 0s;"></div>
+  <div class="lantern" style="left: 40%; animation-delay: 2s;"></div>
+  <div class="lantern" style="left: 60%; animation-delay: 4s;"></div>
+  <div class="lantern" style="left: 30%; animation-delay: 3s;"></div>
+  <div class="lantern" style="left: 70%; animation-delay: 1.5s;"></div>
+
+  <!-- Optional background music -->
+  <audio autoplay loop>
+    <source src="dreamy.mp3" type="audio/mpeg">
+  </audio>
+</body>
+</html>
